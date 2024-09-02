@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories - BrightKids Academy</title>
+    <link rel="stylesheet" href="story.css">
+   
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="Images/logo2.png" alt="BrightKids Academy Logo">
+            <h1> BrightKids Academy</h1>
+        </div>
+        <div class="navbar-links">
+            <a href="home.html" >Home</a>
+            <a href="aplhabet_learning.html">Alphabet Learning</a>
+            
+            <a href="number.html">Number Learning</a>
+            <a href="story.html">Stories</a>
+         
+         
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Stories</h2>
+            <ul id="story-list">
+                <li data-story="story1">The Tortoise and the Rabbit</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+               
+             
+                <!-- Add more stories as needed -->
+            </ul>
+        </div>
+        <div class="story-content">
+            <div id="story1" class="story active">
+                <h3>The Tortoise and the Rabbit</h3>
+                <section class="videos">
+                    <div class="video-container">
+                        <video class="video-player" width="600" controls>
+                            <source src="Images/v1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                       
+                    </div>
+                </section>
+                <div class="controls">
+                    <button class="play-pause">Play</button>
+                    <input class="seek-bar" type="range" value="0">
+                    <span class="time-display">00:00</span>
+                    <button class="mute">Mute</button>
+                    <input class="volume-bar" type="range" min="0" max="1" step="0.1" value="1">
+                </div>
+            </div>
+            <div id="story2" class="story">
+                <h3>The Lion and the Mouse</h3>
+                <section class="videos">
+                    <div class="video-container">
+                        <video class="video-player" width="600" controls>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                      
+                    </div>
+                </section>
+                <div class="controls">
+                    <button class="play-pause">Play</button>
+                    <input class="seek-bar" type="range" value="0">
+                    <span class="time-display">00:00</span>
+                    <button class="mute">Mute</button>
+                    <input class="volume-bar" type="range" min="0" max="1" step="0.1" value="1">
+                </div>
+            </div>
+            <!-- Add more stories as needed -->
+        </div>
+    </div>
+
+    <!-- <footer class="footer">
+        <p>&copy; 2024 BrightKids Academy. All rights reserved.</p>
+    </footer> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const storyList = document.getElementById('story-list');
+            const stories = document.querySelectorAll('.story');
+
+            storyList.addEventListener('click', (event) => {
+                if (event.target.tagName === 'LI') {
+                    const selectedStoryId = event.target.getAttribute('data-story');
+                    stories.forEach(story => {
+                        if (story.id === selectedStoryId) {
+                            story.classList.add('active');
+                            story.style.display = 'block';
+                        } else {
+                            story.classList.remove('active');
+                            story.style.display = 'none';
+                        }
+                    });
+                }
+            });
+
+            // Function to set up video controls
+            const setupVideoControls = (video, playButton, seekBar, timeDisplay, muteButton, volumeBar) => {
+                // Play/pause button functionality
+                playButton.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play();
+                        playButton.textContent = 'Pause';
+                    } else {
+                        video.pause();
+                        playButton.textContent = 'Play';
+                    }
+                });
+
+                // Update button text when video ends
+                video.addEventListener('ended', () => {
+                    playButton.textContent = 'Play';
+                });
+
+                // Seek bar functionality
+                video.addEventListener('timeupdate', () => {
+                    const value = (100 / video.duration) * video.currentTime;
+                    seekBar.value = value;
+
+                    // Update the time display
+                    const minutes = Math.floor(video.currentTime / 60);
+                    const seconds = Math.floor(video.currentTime - minutes * 60);
+                    timeDisplay.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                });
+
+                seekBar.addEventListener('input', () => {
+                    const time = video.duration * (seekBar.value / 100);
+                    video.currentTime = time;
+                });
+
+                // Mute button functionality
+                muteButton.addEventListener('click', () => {
+                    video.muted = !video.muted;
+                    muteButton.textContent = video.muted ? 'Unmute' : 'Mute';
+                });
+
+                // Volume bar functionality
+                volumeBar.addEventListener('input', () => {
+                    video.volume = volumeBar.value;
+                });
+            };
+
+            // Set up video controls for all videos
+            const videos = document.querySelectorAll('.video-player');
+            videos.forEach(video => {
+                const playButton = video.nextElementSibling.querySelector('.play-pause');
+                const seekBar = video.nextElementSibling.querySelector('.seek-bar');
+                const timeDisplay = video.nextElementSibling.querySelector('.time-display');
+                const muteButton = video.nextElementSibling.querySelector('.mute');
+                const volumeBar = video.nextElementSibling.querySelector('.volume-bar');
+
+                setupVideoControls(video, playButton, seekBar, timeDisplay, muteButton, volumeBar);
+            });
+        });
+    </script>
+</body>
+</html>
+//updated html code of story 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories - BrightKids Academy</title>
+    <link rel="stylesheet" href="story.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="Images/logo2.png" alt="BrightKids Academy Logo">
+            <h1>BrightKids Academy</h1>
+        </div>
+        <div class="navbar-links">
+            <a href="home.html">Home</a>
+            <a href="aplhabet_learning.html">Alphabet Learning</a>
+            <a href="number.html">Number Learning</a>
+            <a href="story.html">Stories</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Stories</h2>
+            <ul id="story-list">
+                <li data-story="story1">The Tortoise and the Rabbit</li>
+                <li data-story="story2">The Lion and the Mouse</li>
+                <!-- Add more stories as needed -->
+            </ul>
+        </div>
+        <div class="story-content">
+            <div id="story1" class="story active">
+                <h3>The Tortoise and the Rabbit</h3>
+                <section class="videos">
+                    <div class="video-container">
+                        <video class="video-player" width="600" controls controlsList="nodownload">
+                            <source src="Images/v2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </section>
+            </div>
+            <div id="story2" class="story">
+                <h3>The Lion and the Mouse</h3>
+                <section class="videos">
+                    <div class="video-container">
+                        <video class="video-player" width="600" controls controlsList="nodownload">
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </section>
+            </div>
+            <!-- Add more stories as needed -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const storyList = document.getElementById('story-list');
+            const stories = document.querySelectorAll('.story');
+
+            storyList.addEventListener('click', (event) => {
+                if (event.target.tagName === 'LI') {
+                    const selectedStoryId = event.target.getAttribute('data-story');
+                    stories.forEach(story => {
+                        if (story.id === selectedStoryId) {
+                            story.classList.add('active');
+                            story.style.display = 'block';
+                        } else {
+                            story.classList.remove('active');
+                            story.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+//css
+
+
+/* General Styles */
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #87CEEB; /* Sky Blue */
+    padding: 20px;
+    position: fixed;
+    top: 90px; /* Adjust based on your navbar height */
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    color: #FFD700; /* Sunshine Yellow */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover {
+    background-color: #FFD700; /* Sunshine Yellow */
+}
+
+.story-content {
+    width: 80%;
+    padding: 20px;
+    margin-left: 20%;
+}
+
+.story {
+    display: none;
+}
+
+.story.active {
+    display: block;
+}
+
+.story h3 {
+    margin-top: 0;
+    margin-left: 145px;
+}
+
+.controls {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #87CEEB; /* Sky Blue */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    height: 50px; /* Adjust based on your logo size */
+    width: 50px;
+    margin-right: 10px;
+}
+
+.navbar-logo h1 {
+    font-family: 'Comic Sans MS', 'Fredoka One', sans-serif;
+    color: #FFD700; /* Sunshine Yellow */
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    font-family: 'Nunito', sans-serif;
+    color: #FFFFFF; /* White */
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+    color: #32CD32; /* Grass Green */
+    background-color: #FFD700; /* Sunshine Yellow */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #87CEEB; /* Sky Blue */
+    color: #FFFFFF; /* White */
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Video Styles */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+video {
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #FFD700; /* Optional border for better visibility */
+}
+
+.videos {
+    margin-top: 50px;
+}
+
+button {
+    background-color: #87CEEB; /* Sky Blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+button:active {
+    background-color: #FFD700; /* Sunshine Yellow */
+    color: #000080; /* Navy Blue */
+}
+
+.play-pause,
+.mute {
+    padding: 5px 10px;
+}
+
+.seek-bar,
+.volume-bar {
+    width: 200px;
+    margin: 10px 0;
+}

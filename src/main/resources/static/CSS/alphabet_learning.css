@@ -1,0 +1,254 @@
+
+/* General Styles */
+body {
+font-family: 'Nunito', sans-serif;
+color: #333;
+background-color: #f5f5f5;
+margin: 0;
+padding: 0;
+}
+
+.alphabet-learning {
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+.navbar {
+    background-color: #87CEEB; /* Sky Blue */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    
+}
+/* Original code */
+.navbar-logo img {
+    height: 50px; /* Adjust based on your logo size */
+    width:50px;
+    margin-right: 10px;
+    /* border: 2px solid red; */
+}
+/* original coe ends */
+.navbar-logo img {
+    height: 63px;
+    width: 259px;
+    margin-right: 10px;
+    margin-left: 224px;
+    position: absolute;
+    top: -6px;
+    /* border: 2px solid red; */
+
+}
+.navbar-logo h1 {
+    font-family: 'Comic Sans MS', 'Fredoka One', sans-serif;
+    color: #FFD700; /* Sunshine Yellow */
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    font-family: 'Nunito', sans-serif;
+    color: #FFFFFF; /* White */
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+    color: #32CD32; /* Grass Green */
+    background-color: #FFD700; /* Sunshine Yellow */
+}
+/* Introduction Section */
+.intro {
+text-align: center;
+margin-bottom: 30px;
+}
+
+.intro h1 {
+font-size: 2.5em;
+color: #4CAF50; /* Green color */
+}
+
+.intro p {
+font-size: 1.2em;
+color: #666;
+}
+
+/* Alphabet Chart */
+.alphabet-chart {
+text-align: center;
+margin-bottom: 40px;
+}
+
+.alphabet-chart h2 {
+font-size: 2em;
+color: #4CAF50;
+}
+
+.alphabet-grid {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+}
+
+.letter {
+background-color: #fff;
+border: 2px solid #ddd;
+border-radius: 8px;
+padding: 20px;
+width: 80px;
+text-align: center;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.letter:hover {
+background-color: #FFD700; /* Sunshine Yellow */
+}
+
+/* Learning Activities */
+.activities {
+margin-bottom: 40px;
+}
+
+.activities h2 {
+font-size: 2em;
+color: #4CAF50;
+text-align: center;
+}
+
+.activity {
+background-color: #fff;
+border: 2px solid #ddd;
+border-radius: 8px;
+padding: 20px;
+margin: 10px auto;
+max-width: 300px;
+text-align: center;
+}
+
+.activity button {
+background-color: #4CAF50; /* Green */
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 1em;
+transition: background-color 0.3s ease;
+}
+
+.activity button:hover {
+background-color: #45a049; /* Darker green */
+}
+.activity button a{
+    text-decoration: none;
+    color: black;
+}
+
+/* Educational Videos */
+.videos {
+margin-bottom: 40px;
+}
+
+.videos h2 {
+font-size: 2em;
+color: #4CAF50;
+text-align: center;
+}
+
+.video {
+margin: 20px auto;
+max-width: 600px;
+}
+
+.video video {
+width: 100%;
+border-radius: 8px;
+}
+
+/* Printable Worksheets */
+.worksheets {
+text-align: center;
+margin-bottom: 40px;
+}
+
+.worksheets h2 {
+font-size: 2em;
+color: #4CAF50;
+}
+
+.worksheets a {
+display: block;
+margin: 10px auto;
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border-radius: 5px;
+text-decoration: none;
+font-size: 1.1em;
+transition: background-color 0.3s ease;
+}
+
+.worksheets a:hover {
+background-color: #45a049;
+}
+
+/* Progress Tracking */
+.progress-tracking {
+text-align: center;
+margin-bottom: 40px;
+}
+
+.progress-tracking h2 {
+font-size: 2em;
+color: #4CAF50;
+}
+
+.badges img {
+width: 80px;
+height: auto;
+margin: 10px;
+}
+
+/* Call-to-Action */
+.cta {
+text-align: center;
+}
+
+.cta h2 {
+font-size: 2em;
+color: #4CAF50;
+}
+
+.cta button {
+background-color: #4CAF50; /* Green */
+color: white;
+border: none;
+padding: 15px 30px;
+border-radius: 8px;
+font-size: 1.2em;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.cta button:hover {
+background-color: #45a049; /* Darker green */
+}
+
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images - Admin Panel</title>
+    <link rel="stylesheet" href="CSS/style_admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="sidebar">
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="users.html">Users</a></li>
+                <li><a href="images.html" class="active">Images</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>Welcome, Admin</h1>
+            </div>
+            <div class="content">
+                <section id="images">
+                    <h2>Images</h2>
+                    
+                    <!-- Table for listing images -->
+                    <table class="images-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Image</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="image-table-body">
+                            <!-- Images will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+
+                    <!-- Form for adding or editing images -->
+                    <div class="image-form">
+                        <h3>Add/Edit Image</h3>
+                        <form action="/upload-image" method="POST" enctype="multipart/form-data">
+                            <label for="image-title">Title:</label>
+                            <input type="text" id="image-title" name="image-title" required>
+
+                            <label for="image-file">Upload Image File:</label>
+                            <input type="file" id="image-file" name="image-file" accept="image/*" required>
+
+                            <button type="submit">Save</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to fetch images from the backend
+        function fetchImages() {
+            fetch('/api/images')
+                .then(response => response.json())
+                .then(data => {
+                    const imageTableBody = document.getElementById('image-table-body');
+                    imageTableBody.innerHTML = ''; // Clear existing images
+                    data.forEach(image => {
+                        const filePath = image.filePath.replace(/\\/g, '/');
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${image.id}</td>
+                            <td>${image.title}</td>
+                            <td><img src="/uploads/${filePath}" alt="${image.title}" width="100"></td>
+                            <td>
+                                <button onclick="deleteImage(${image.id})">Delete</button>
+                            </td>
+                        `;
+                        imageTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching images:', error));
+        }
+
+        // Function to delete an image
+        function deleteImage(id) {
+            fetch(`/api/images/${id}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.text())
+            .then(message => {
+                console.log(message);
+                fetchImages(); // Refresh the list
+            })
+            .catch(error => console.error('Error deleting image:', error));
+        }
+
+        // Initial fetch of images on DOM content load
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchImages();
+        });
+    </script>
+</body>
+</html>

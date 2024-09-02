@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Recognition Game</title>
+    <link rel="stylesheet" href="CSS/norecognition.css">
+    <style>
+        #number-to-recognize {
+            color: black; /* Default color */
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+    </style>/
+</head>
+<body>
+<div class="activity" id="number-recognition-game">
+    <h3>Number Recognition Game</h3>
+    <p>Click on the correct number as it appears!</p>
+    <button onclick="startNumberRecognitionGame()">Play Now</button>
+    <a href="number.html"><button>Back To Home</button></a>
+    <div id="number-recognition-content" style="display:none;">
+        <p id="number-to-recognize">1</p>
+        <button onclick="checkNumber(1)">ONE</button>
+        <button onclick="checkNumber(2)">TWO</button>
+        <button onclick="checkNumber(3)">THREE</button>
+        <button onclick="checkNumber(4)">FOUR</button>
+        <button onclick="checkNumber(5)">FIVE</button>
+        <button onclick="checkNumber(6)">SIX</button>
+        <button onclick="checkNumber(7)">SEVEN</button>
+        <button onclick="checkNumber(8)">EIGHT</button>
+        <button onclick="checkNumber(9)">NINE</button>
+        <!-- <button onclick="checkNumber(0)">0</button> -->
+    </div>
+</div>
+
+<!-- Audio elements for each number -->
+<audio id="sound-1" src="images/sound/one.m4a"></audio>
+<audio id="sound-2" src="images/sound/two.m4a"></audio>
+<audio id="sound-3" src="images/sound/three.m4a"></audio>
+<audio id="sound-4" src="images/sound/four.m4a"></audio>
+<audio id="sound-5" src="images/sound/five.m4a"></audio>
+<audio id="sound-6" src="images/sound/six.m4a"></audio>
+<audio id="sound-7" src="images/sound/seven.m4a"></audio>
+<audio id="sound-8" src="images/sound/eight.m4a"></audio>
+<audio id="sound-9" src="images/sound/nine.m4a"></audio>
+
+<script src="JS/norecognition.js">
+    
+</script>
+</body>
+</html>

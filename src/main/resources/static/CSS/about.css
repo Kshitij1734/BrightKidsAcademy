@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #87CEEB; /* Sky Blue */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    height: 50px; /* Adjust based on your logo size */
+    margin-right: 10px;
+}
+
+.navbar-logo h1 {
+    font-family: 'Comic Sans MS', 'Fredoka One', sans-serif;
+    color: #FFD700; /* Sunshine Yellow */
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    font-family: 'Nunito', sans-serif;
+    color: #FFFFFF; /* White */
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+    color: #32CD32; /* Grass Green */
+    background-color: #FFD700; /* Sunshine Yellow */
+}
+
+/* About Us Section */
+.about-us {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-us h2 {
+    font-size: 2.5em;
+    color: #FF6347; /* Tomato color */
+}
+
+.about-us p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 20px 0;
+}
+
+.about-us h3 {
+    font-size: 2em;
+    color: #FF6347; /* Tomato color */
+    margin-top: 40px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h4 {
+    font-size: 1.5em;
+    color: #FF6347; /* Tomato color */
+    margin: 10px 0;
+}
+
+.team-member p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #87CEEB; /* Sky Blue */
+    color: #FFFFFF; /* White */
+    text-align: center;
+    padding: 20px 0;
+}

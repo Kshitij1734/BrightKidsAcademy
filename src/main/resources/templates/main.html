@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="CSS/home.css">
+
+</head>
+<body>
+    <!-- <div class="nav">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aplhabet_learning.html">Alphabet Learning</a></li>
+                <li><a href="number.html">Number Learning</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="index.html">Login/Sign up</a></li>
+            </ul>
+        </nav>
+    </div> -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+          <img src="Images/logo2.png" alt="BrightKids Academy Logo">
+          <h1> BrightKids Academy</h1>
+      </div>
+      <div class="navbar-links">
+          <a href="#home" class="active">Home</a>
+          
+          <a th:href="@{/alphabet_learning}">Alphabet Learning</a>
+          <a th:href="@{/number_learning}">Number Learning</a>
+          <a th:href="@{/story}">Stories</a>
+          <a  th:href="@{/story}" target="_blank">About</a>
+          <a href="contact.html" target="_blank">Contact</a>
+      </div>
+  </nav>
+    <div class="hero-section">
+        <h1>Welcome to BrightKids Academy</h1>
+        <img src="https://source.unsplash.com/random/?city,night" alt="Colorful illustration">
+        <!-- <img src="" alt="Colorful illustration"> -->
+        <button>Start Learning</button>
+        <button>Explore Stories</button>
+      </div>
+      
+      <div class="featured-section">
+        <div class="feature">
+          <h2>Alphabet Learning</h2>
+          <p>Explore fun and interactive activities to learn the alphabet.</p>
+          <button><a href="aplhabet_learning.html">Learn More</a></button>
+        </div>
+        <div class="feature">
+          <h2>Number Learning</h2>
+          <p>Interactive games and activities to master numbers.</p>
+          <button><a href="number.html">Learn More</a></button>
+        </div>
+        <div class="feature">
+          <h2>Stories</h2>
+          <p>Discover original stories, classic fairy tales, and moral stories.</p>
+          <button><a href="story.html">Learn More</a></button>
+        </div>
+       
+      </div>
+      
+      <!-- <div class="progress-tracker-preview">
+        <h2>Track Your Progress</h2>
+        <img src="path/to/progress-chart.png" alt="Sample progress chart">
+        <p>See how your child is progressing in their learning journey.</p>
+      </div> -->
+      
+      <div class="testimonials">
+        <h2>What Parents Are Saying</h2>
+        <blockquote>"KiddieLearn has transformed my child's learning experience!"</blockquote>
+        <p>★★★★★</p>
+      </div>
+      
+      <!-- <div class="newsletter-signup">
+        <h2>Stay Updated</h2>
+        <form>
+          <input type="email" placeholder="Enter your email">
+          <button>Subscribe</button>
+        </form>
+      </div> -->
+      
+      <footer>
+        <div class="quick-links">
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="social-media">
+          <a href="#"><img src="path/to/facebook-icon.png" alt="Facebook"></a>
+          <a href="#"><img src="path/to/twitter-icon.png" alt="Twitter"></a>
+        </div>
+        <div class="contact-info">
+          <p>Email: info@kiddielearn.com</p>
+        </div>
+      </footer>
+      
+</body>
+</html>

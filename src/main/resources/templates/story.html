@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories - BrightKids Academy</title>
+    <link rel="stylesheet" href="CSS/story.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="Images/logo2.png" alt="BrightKids Academy Logo">
+            <h1>BrightKids Academy</h1>
+        </div>
+        <div class="navbar-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="alphabet_learning.html">Alphabet Learning</a>
+            <a href="number.html">Number Learning</a>
+            <a href="about.html" target="_blank">About</a>
+            <a href="contact.html" target="_blank">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Stories</h2>
+            <ul id="story-list">
+                <!-- Stories will be dynamically inserted here -->
+            </ul>
+        </div>
+        <div class="story-content" id="story-content">
+            <!-- Story content will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 BrightKids Academy. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const storyList = document.getElementById('story-list');
+            const storyContent = document.getElementById('story-content');
+
+            // Function to fetch and display stories
+            function fetchStories() {
+                fetch('/api/stories')
+                    .then(response => response.json())
+                    .then(data => {
+                        storyList.innerHTML = ''; // Clear the story list
+                        storyContent.innerHTML = ''; // Clear the story content
+
+                        if (data.length > 0) {
+                            data.forEach(story => {
+                                const listItem = document.createElement('li');
+                                listItem.textContent = story.title;
+                                listItem.setAttribute('data-story', `story-${story.id}`);
+                                listItem.addEventListener('click', () => showStory(story));
+                                storyList.appendChild(listItem);
+                            });
+
+                            // Automatically display the first story
+                            showStory(data[0]);
+                        } else {
+                            storyContent.innerHTML = '<p>No stories available.</p>';
+                        }
+                    })
+                    .catch(error => console.error('Error fetching stories:', error));
+            }
+
+            // Function to display a story
+            function showStory(story) {
+                const videoUrl = `/Images/${story.filePath}`;
+                storyContent.innerHTML = `
+                    <div id="story-${story.id}" class="story active">
+                        <h3>${story.title}</h3>
+                        <section class="videos">
+                            <div class="video-container">
+								<video class="video-player" width="600" controls controlsList="nodownload">
+								    <source src="${story.filePath}" type="video/mp4">
+								    Your browser does not support the video tag.
+								</video>
+
+                            </div>
+                        </section>
+                    </div>
+                `;
+                
+                // Error handling for video playback
+                const videoElement = storyContent.querySelector('video');
+                videoElement.onerror = function() {
+                    storyContent.innerHTML += '<p>Sorry, the video cannot be played.</p>';
+                };
+            }
+
+            // Initial fetch of stories
+            fetchStories();
+        });
+    </script>
+</body>
+</html>
